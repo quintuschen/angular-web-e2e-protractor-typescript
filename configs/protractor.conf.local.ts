@@ -37,7 +37,7 @@ export let config: Config = {
         // Add a screen shot reporter:
         jasmine.getEnv().addReporter(new HtmlReporter({
             baseDirectory: 'results',
-            docTitle: `VizFlow UI E2E Test Results - ${new Date()}`,
+            docTitle: `Test Results - ${new Date()}`,
             preserveDirectory: false,
             takeScreenShotsOnlyForFailedSpecs: true,
             screenshotsSubfolder: 'images',
