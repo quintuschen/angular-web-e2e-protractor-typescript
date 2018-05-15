@@ -1,0 +1,7 @@
+results/
+node_modules/
+.idea/
+*.log
+package-lock.json
+*.js
+./**/*.js

@@ -1,0 +1,37 @@
+{
+  "name": "angular-web-e2e-protractor-typescript",
+  "version": "0.1.0",
+  "description": "End-to-end UI test automation for Angular web application using Protractor with TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npm run tsc",
+    "test": "./node_modules/.bin/protractor configs/protractor.conf.local.js",
+    "tsc": "./node_modules/.bin/tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quintuschen/angular-web-e2e-protractor-typescript.git"
+  },
+  "keywords": [
+    "e2e",
+    "angular",
+    "protractor",
+    "ui",
+    "automation",
+    "typescript"
+  ],
+  "author": "Quintus Chen (quintus.guo.chen[AT]gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quintuschen/angular-web-e2e-protractor-typescript/issues"
+  },
+  "homepage": "https://github.com/quintuschen/angular-web-e2e-protractor-typescript#readme",
+  "dependencies": {
+    "@types/jasmine": "^2.8.7",
+    "@types/node": "^10.0.8",
+    "jasmine-spec-reporter": "^4.2.1",
+    "protractor": "^5.3.2",
+    "protractor-beautiful-reporter": "^1.2.1",
+    "typescript": "^2.8.3"
+  }
+}
