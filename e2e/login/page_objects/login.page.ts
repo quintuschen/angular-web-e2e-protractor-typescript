@@ -1,8 +1,9 @@
 import {element, by, browser} from "protractor";
+import {BasePage} from "../../common/page_objects/base.page";
 
-export class LoginPage {
+export class LoginPage extends BasePage {
 
-    readonly page = {
+    readonly loginBox: any = {
         username: element(by.name('username')),
         password: element(by.name('password')),
         rememberMe: element(by.css('label[for="rememberMe"]')),
@@ -14,10 +15,10 @@ export class LoginPage {
     }
 
     public login(username: string, password: string) {
-        this.page.username.clear();
-        this.page.username.sendKeys(username);
-        this.page.password.clear();
-        this.page.password.sendKeys(password);
-        this.page.loginButton.click();
+        this.loginBox.username.clear();
+        this.loginBox.username.sendKeys(username);
+        this.loginBox.password.clear();
+        this.loginBox.password.sendKeys(password);
+        this.loginBox.loginButton.click();
     }
 }

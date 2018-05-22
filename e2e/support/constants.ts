@@ -1,0 +1,3 @@
+export const GLOBAL_SETTINGS = {
+    WAITING_TIME_FOR_ELEMENTS: 5000,
+};
