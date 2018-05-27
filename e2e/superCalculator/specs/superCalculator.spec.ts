@@ -14,11 +14,19 @@ describe("Super Calculator", () => {
         expect(superCalculator.calculator.result.getText()).toBe('5');
     });
 
-    it("should be able to multiply two integers", () =>{
+    it("should be able to multiply two integers", () => {
         superCalculator.calculator.firstOperandField.sendKeys(3);
         superCalculator.calculator.secondOperandField.sendKeys(5);
         superCalculator.selectOperator("MULTIPLICATION");
         superCalculator.calculator.calculateButton.click();
         expect(superCalculator.calculator.result.getText()).toBe('15');
-    })
+    });
+
+    it("should be able to give NaN when wrong operands provided", () => {
+        superCalculator.calculator.firstOperandField.sendKeys(5);
+        superCalculator.calculator.secondOperandField.clear();
+        superCalculator.selectOperator("SUBTRACTION");
+        superCalculator.calculator.calculateButton.click();
+        expect(superCalculator.calculator.result.getText()).toBe('NaN');
+    });
 });
