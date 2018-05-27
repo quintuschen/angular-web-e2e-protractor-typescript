@@ -15,7 +15,11 @@ export class BasePage {
             cancelButton: element(by.css('ng-click="exVm.cancel()"')),
 
         };
-    }
+    };
+
+    public get(url: string = browser.baseUrl) {
+        browser.get(url);
+    };
 
     public getToastMessages() {
         browser.wait(protractor.ExpectedConditions.visibilityOf(this.toast.toastContainer), GLOBAL_SETTINGS.WAITING_TIME_FOR_ELEMENTS);

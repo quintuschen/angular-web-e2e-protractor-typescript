@@ -10,7 +10,7 @@ export let config: Config = {
     seleniumServerJar: '../node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-3.12.0.jar',
     chromeDriver: '../node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.38',
     // System under test
-    baseUrl: 'http://localhost:8080/',
+    baseUrl: 'http://juliemr.github.io/protractor-demo/',
     allScriptsTimeout: 60000,
     capabilities: {
         browserName: 'chrome',
@@ -42,7 +42,7 @@ export let config: Config = {
             takeScreenShotsOnlyForFailedSpecs: true,
             screenshotsSubfolder: 'images',
             jsonsSubfolder: 'jsons',
-            pathBuilder: (spec: any, descriptions: any, results: any, capabilities: any) => {
+            pathBuilder: (spec: any, descriptions: any, results?: any, capabilities?: any) => {
                 // Return '<30-12-2016>/<browser>/<specname>' as path for screenshots:
                 // Example: '30-12-2016/firefox/list-should work'.
                 let currentDate = new Date(),
@@ -56,7 +56,7 @@ export let config: Config = {
 
                 return path.join(
                     day + "-" + month + "-" + year,
-                    // capabilities.get('browserName'),
+                    capabilities.get('browserName'),
                     validDescriptions.join('-'));
             }
         }).getJasmine2Reporter());
