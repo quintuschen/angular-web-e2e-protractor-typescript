@@ -55,7 +55,7 @@ The folder structure for the project is shown in the following:
         |     |     `--specs
         |     |            |
         |     |            `--*.spec.ts
-        |     `--<page_1>
+        |     `--<page_n>
         |     |     |
         |     |     `--page_objects
         |     |     |       |
@@ -63,7 +63,6 @@ The folder structure for the project is shown in the following:
         |     |     `--specs
         |     |            |
         |     |            `--*.spec.ts
-        |     `--<page_n>
         |     |
         |     `--support
         |           |
