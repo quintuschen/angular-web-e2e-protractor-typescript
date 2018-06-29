@@ -34,7 +34,7 @@ The folder structure for the project is shown in the following:
         |
         `--configs
         |     |
-        |     `--protractor.conf.local.ts
+        |     `--protractor.config.ts
         |     |
         |     `--protractor.conf.remote.ts
         |

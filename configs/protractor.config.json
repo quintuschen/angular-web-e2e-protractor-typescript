@@ -1,0 +1,36 @@
+{
+  "baseUrl": "http://juliemr.github.io/protractor-demo/",
+  "allScriptsTimeout": 300000,
+  "capabilities": {
+    "browserName": "chrome",
+    "maxInstances": 20,
+    "shardTestFiles": true,
+    "chromeOptions": {
+      "args": [
+        "--no-sandbox",
+        "--disable-extensions",
+        "--start-maximized"
+      ],
+      "prefs": {
+        "credentials_enable_service": false,
+        "profile": {
+          "password_manager_enabled": false
+        }
+      }
+    }
+  },
+  "framework": "jasmine",
+  "jasmineNodeOpts": {
+    "showColors": true
+  },
+  "specs": [
+    "../e2e/**/*.spec.js"
+  ],
+  "suites": {
+    "login": "../e2e/login/specs/*.spec.js",
+    "projects": "../e2e/projects/specs/*.spec.js",
+    "processes": "../e2e/processes/specs/*.spec.js",
+    "connection": "../e2e/connection/specs/*.spec.js",
+    "flowDesign": "../e2e/flowDesign/specs/*.spec.js"
+  }
+}

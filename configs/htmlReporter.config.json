@@ -1,0 +1,8 @@
+{
+  "baseDirectory": "results/html",
+  "docTitle": "Test Report",
+  "preserveDirectory": false,
+  "takeScreenShotsOnlyForFailedSpecs": true,
+  "screenshotsSubfolder": "images",
+  "jsonsSubfolder": "jsons"
+}

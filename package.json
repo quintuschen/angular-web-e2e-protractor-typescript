@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "pretest": "npm run tsc",
-    "test": "./node_modules/.bin/protractor configs/protractor.conf.local.js",
-    "tsc": "./node_modules/.bin/tsc"
+    "test": "./node_modules/.bin/protractor configs/protractor.config.js",
+    "tsc": "./node_modules/.bin/tsc",
+    "prepareWebDriver": "./node_modules/.bin/webdriver-manager update"
   },
   "repository": {
     "type": "git",
