@@ -14,16 +14,44 @@ What it can do
 
 Requirements
 ------------
-
 - node.js
+- Java Development Kit
 
-How to Run
-----------
+How to Setup the Environment
+----------------------------
 
     > git clone
     > npm install
-    > ./node_modules/.bin/webdriver-manager update
+    > npm run prepareWebDriver
+    
+You will need to setup the system under test in the `baseUrl` field of `protractor.config.json`.
+    
+How to Run
+----------
+You can run all the test simply using the following npm script:
+ 
     > npm test
+
+This script will first transpile your TypeScript files to JavaScript (ES6) and execute 
+the test cases by using protractor. 
+
+You can run a specified suite (defined in `protractor.config.json`)
+
+    > ./node_modules/.bin/protractor configs/protractor.conf.js --suite=<suiteName>
+
+You can also run a list of specs separated by comma.
+
+    > ./node_modules/.bin/protractor configs/protractor.conf.js --specs <spec_1>, <spec_2>, ..., <spec_n>
+ 
+Test Results
+------------
+After running the test cases, by default you will have the test results in the folder `./results`
+As we've added reporters for HTML report and JUnit report, they will reside in `./results/html` and 
+`./results/junit`, respectively.
+
+For HTML report, you can simply open `report.html` for reviewing, by default it will capture screenshots
+for failed cases, which could be very helpful when debugging test cases.
+
     
 Structure
 ---------
@@ -36,7 +64,13 @@ The folder structure for the project is shown in the following:
         |     |
         |     `--protractor.config.ts
         |     |
-        |     `--protractor.conf.remote.ts
+        |     `--protractor.config.json
+        |     |
+        |     `--htmlReporter.config.json
+        |     |
+        |     `--junitReporter.config.json
+        |     |
+        |     `--config.d.ts
         |
         `----e2e
         |     |
@@ -68,6 +102,16 @@ The folder structure for the project is shown in the following:
         |           |
         |           `--constants.ts
         |           |
+        |           `--html5.helper.ts
+        |           |
         |           `--<helper_classes>
         |
-        `------tsconfig.json
+        `----results
+        |     |
+        |     `--html
+        |     |
+        |     `--junit
+        |
+        `----tsconfig.json
+        |
+        `----package.json
